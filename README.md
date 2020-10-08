@@ -1,5 +1,5 @@
 # Smart School Manager 
-Gads 2020 project phase
+Gads 2020 project phase (work in progress...)
 
 <a href='https://developer.android.com/jetpack/guide' target='_blank'></a>
 
