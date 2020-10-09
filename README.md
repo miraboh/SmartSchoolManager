@@ -3,7 +3,7 @@ Gads 2020 project phase (work in progress...)
 
 <a href='https://developer.android.com/jetpack/guide' target='_blank'></a>
 
-<h2><strong>Tools To Use</strong></h2>
+<h2><strong>Tools</strong></h2>
 <br>
 
 <ul>
