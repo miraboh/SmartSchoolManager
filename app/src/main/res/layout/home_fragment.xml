@@ -10,6 +10,7 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
         tools:context=".HomeFragment">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -126,7 +127,7 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp">
                 <GridLayout
                     android:layout_width="wrap_content"
@@ -139,7 +140,7 @@
                     android:layout_marginBottom="10dp">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/readindId"
+                        android:id="@+id/libraryId"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
@@ -156,13 +157,13 @@
                             <ImageView
                                 android:layout_width="130sp"
                                 android:layout_height="130sp"
-                                android:src="@drawable/ic_baseline_school"
+                                android:src="@drawable/ic_picture_pdf"
                                 android:layout_gravity="center_horizontal|center_vertical" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Reading"
+                                android:text="Library"
                                 android:textSize="15sp"
                                 android:layout_gravity="center_horizontal"
                                 android:textStyle="bold" />
@@ -171,7 +172,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/quizId"
+                        android:id="@+id/takeQuizId"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
@@ -205,9 +206,10 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/libraryId"
+                        android:id="@+id/myHistoryId"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        app:cardBackgroundColor="@color/backgroundColor"
                         android:layout_margin="10dp"
                         app:cardElevation="10dp"
                         app:cardCornerRadius="10dp">
@@ -222,7 +224,7 @@
                             <ImageView
                                 android:layout_width="130sp"
                                 android:layout_height="130sp"
-                                android:src="@drawable/ic_picture_pdf"
+                                android:src="@drawable/ic_history"
                                 android:layout_gravity="center_horizontal|center_vertical"
 
                                 />
@@ -230,7 +232,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Library"
+                                android:text="My History"
                                 android:textSize="15sp"
                                 android:layout_gravity="center_horizontal"
                                 android:textStyle="bold" />
@@ -242,6 +244,8 @@
                         android:id="@+id/resultId"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        app:cardBackgroundColor="@color/backgroundColor"
+
                         android:layout_margin="10dp"
                         app:cardElevation="10dp"
                         app:cardCornerRadius="10dp">
