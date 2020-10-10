@@ -3,23 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/jambFragment"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/home"
         android:title="Home" />
-    <item
-        android:id="@+id/novelFragment"
-        android:icon="@drawable/book"
-        android:title="Novel" />
-    <item
-        android:id="@+id/whatssapFragment"
-        android:icon="@drawable/forum"
-        android:title="Whatssap Group"/>
-    <item
-        android:id="@+id/contactUsFragment"
-        android:icon="@drawable/contact"
-        android:title="Contact Us"/>
-    <item
-        android:id="@+id/shareAppFrag"
-        android:icon="@drawable/share"
-        android:title="Share"/>
+
 </menu>
