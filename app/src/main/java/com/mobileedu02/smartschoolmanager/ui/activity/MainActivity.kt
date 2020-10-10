@@ -1,4 +1,4 @@
-package com.mobileedu02.smartschoolmanager
+package com.mobileedu02.smartschoolmanager.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,10 +7,9 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.tabs.TabLayout
+import com.mobileedu02.smartschoolmanager.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
