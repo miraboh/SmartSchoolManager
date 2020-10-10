@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/backgroundColor"
-        tools:context=".ui.fragments.home.HomeFragment">
+        tools:context=".HomeFragment">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
@@ -157,7 +157,7 @@
                             <ImageView
                                 android:layout_width="130sp"
                                 android:layout_height="130sp"
-                                app:srcCompat="@drawable/ic_picture_pdf"
+                                android:src="@drawable/ic_picture_pdf"
                                 android:layout_gravity="center_horizontal|center_vertical" />
 
                             <TextView
@@ -189,7 +189,7 @@
                             <ImageView
                                 android:layout_width="130sp"
                                 android:layout_height="130sp"
-                                app:srcCompat="@drawable/ic_baseline_file"
+                                android:src="@drawable/ic_baseline_file"
                                 android:layout_gravity="center_horizontal|center_vertical"
 
                                 />
@@ -224,7 +224,7 @@
                             <ImageView
                                 android:layout_width="130sp"
                                 android:layout_height="130sp"
-                                app:srcCompat="@drawable/ic_history"
+                                android:src="@drawable/ic_history"
                                 android:layout_gravity="center_horizontal|center_vertical"
 
                                 />
@@ -260,7 +260,7 @@
                         <ImageView
                             android:layout_width="130sp"
                             android:layout_height="130sp"
-                            app:srcCompat="@drawable/ic_post_add"
+                            android:src="@drawable/ic_post_add"
                             android:layout_gravity="center_horizontal|center_vertical" />
 
                         <TextView

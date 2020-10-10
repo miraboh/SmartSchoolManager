@@ -1,4 +1,4 @@
-package com.mobileedu02.smartschoolmanager.ui.fragments.home
+package com.mobileedu02.smartschoolmanager
 
 import androidx.lifecycle.ViewModel
 
