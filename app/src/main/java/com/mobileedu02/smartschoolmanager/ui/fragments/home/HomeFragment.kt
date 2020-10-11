@@ -1,16 +1,15 @@
-package com.mobileedu02.smartschoolmanager
+package com.mobileedu02.smartschoolmanager.ui.fragments.home
 
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.mobileedu02.smartschoolmanager.databinding.HomeFragmentBinding
 
 class HomeFragment : Fragment() {
 
     companion object {
-        fun newInstance() = HomeFragment()
+        fun newInstance() =
+            HomeFragment()
     }
 
     private lateinit var viewModel: HomeViewModel

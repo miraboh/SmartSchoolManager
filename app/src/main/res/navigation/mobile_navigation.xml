@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.mobileedu02.smartschoolmanager.HomeFragment"
+        android:name="com.mobileedu02.smartschoolmanager.ui.fragments.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/home_fragment" />
 </navigation>
