@@ -1,0 +1,4 @@
+package com.mobileedu02.smartschoolmanager.datatSource
+
+abstract class SmartSchoolDataBase {
+}
