@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "538741883601",
+    "firebase_url": "https://smart-school-manager.firebaseio.com",
+    "project_id": "smart-school-manager",
+    "storage_bucket": "smart-school-manager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538741883601:android:18c7aded243a49ca563bf0",
+        "android_client_info": {
+          "package_name": "com.mobileedu02.smartschoolmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538741883601-bovej48fndnjbj7ehu4reod8bv059q4n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobileedu02.smartschoolmanager",
+            "certificate_hash": "215b42ead07f2d1a7c3929173208357a2ec58ab1"
+          }
+        },
+        {
+          "client_id": "538741883601-hamvu6q251dplorf3e8mmh84pn6gqn67.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe0uDRrAJhJet-jMYXPdv19HEjAdxfGDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538741883601-hamvu6q251dplorf3e8mmh84pn6gqn67.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
