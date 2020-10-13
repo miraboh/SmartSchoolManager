@@ -11,5 +11,27 @@
         android:id="@+id/homeFragment"
         android:name="com.mobileedu02.smartschoolmanager.ui.fragments.home.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/home_fragment" />
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_libraryFragment"
+            app:destination="@id/libraryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.mobileedu02.smartschoolmanager.ui.fragments.library.LibraryFragment"
+        android:label="Library">
+        <action
+            android:id="@+id/action_libraryFragment_to_bookDetailsFragment"
+            app:destination="@id/bookDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookDetailsFragment"
+        android:name="com.mobileedu02.smartschoolmanager.ui.fragments.booksdetail.BookDetailsFragment"
+        android:label="Reading Section"
+        tools:layout="@layout/fragment_book_details">
+        <argument
+            android:name="bookArgs"
+            app:argType="com.mobileedu02.smartschoolmanager.model.Book"
+            app:nullable="true" />
+    </fragment>
 </navigation>
