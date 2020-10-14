@@ -118,6 +118,7 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView
+            android:paddingTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/statistic_button"
@@ -155,9 +156,9 @@
                             android:padding="10dp">
 
                             <ImageView
-                                android:layout_width="130sp"
-                                android:layout_height="130sp"
-                                app:srcCompat="@drawable/ic_picture_pdf"
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                app:srcCompat="@drawable/library_book"
                                 android:layout_gravity="center_horizontal|center_vertical" />
 
                             <TextView
@@ -187,9 +188,11 @@
                             android:padding="10dp">
 
                             <ImageView
-                                android:layout_width="130sp"
-                                android:layout_height="130sp"
-                                app:srcCompat="@drawable/ic_baseline_file"
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                app:srcCompat="@drawable/take_quiz"
+                                android:paddingBottom="5dp
+"
                                 android:layout_gravity="center_horizontal|center_vertical"
 
                                 />
@@ -209,7 +212,7 @@
                         android:id="@+id/myHistoryId"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:cardBackgroundColor="@color/backgroundColor"
+                        app:cardBackgroundColor="@color/cardview_light_background"
                         android:layout_margin="10dp"
                         app:cardElevation="10dp"
                         app:cardCornerRadius="10dp">
@@ -222,9 +225,9 @@
                             android:padding="10dp">
 
                             <ImageView
-                                android:layout_width="130sp"
-                                android:layout_height="130sp"
-                                app:srcCompat="@drawable/ic_history"
+                                android:layout_width="130dp"
+                                android:layout_height="130dp"
+                                app:srcCompat="@drawable/history_icon"
                                 android:layout_gravity="center_horizontal|center_vertical"
 
                                 />
@@ -255,12 +258,13 @@
                             android:layout_height="match_parent"
                             android:orientation="vertical"
                             android:layout_margin="2dp"
-                            android:padding="10dp">
+                            android:padding="10dp"
+                            android:background="@color/cardview_light_background">
 
                         <ImageView
-                            android:layout_width="130sp"
-                            android:layout_height="130sp"
-                            app:srcCompat="@drawable/ic_post_add"
+                            android:layout_width="130dp"
+                            android:layout_height="130dp"
+                            app:srcCompat="@drawable/result"
                             android:layout_gravity="center_horizontal|center_vertical" />
 
                         <TextView
