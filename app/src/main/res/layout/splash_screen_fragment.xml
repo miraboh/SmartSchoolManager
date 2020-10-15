@@ -5,11 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.splashscreen.SplashScreenFragment">
 
-    <ImageView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="80dp"
-        android:scaleType="centerInside"
-        android:src="@mipmap/smart_school_mipmap" />
+        android:text="Hello" />
 
 </FrameLayout>
