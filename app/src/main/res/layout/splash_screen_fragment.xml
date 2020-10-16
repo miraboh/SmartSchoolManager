@@ -11,5 +11,4 @@
         android:padding="80dp"
         android:scaleType="centerInside"
         android:src="@mipmap/smart_school_icon" />
-
 </FrameLayout>
