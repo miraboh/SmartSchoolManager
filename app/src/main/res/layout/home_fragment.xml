@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="news"
+            type="com.mobileedu02.smartschoolmanager.model.News" />
+
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -100,13 +104,24 @@
                                 app:srcCompat="@drawable/ic_loading" />
 
                             <TextView
-                                android:id="@+id/txtSearch"
-                                android:layout_width="match_parent"
+                                android:id="@+id/txtNewsFeed"
+                                android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="4dp"
+                                android:ellipsize="marquee"
+                                android:layout_marginTop="1dp"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:freezesText="true"
+                                android:text="@{news.info}"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:scrollHorizontally="true"
                                 android:singleLine="true"
-                                android:textSize="16sp"
-                                android:text="Study to make your self approve through Smart School Manager" />
+                                tools:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci alias aliquam architecto aspernatur at beatae deleniti distinctio doloremque ducimus eligendi, eum facere fuga illo illum iste libero maiores minus nesciunt nostrum porro quod reprehenderit similique tempora ullam. Cum eligendi fuga harum ipsam libero neque officia quae repellendus repudiandae saepe."
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                />
 
                         </LinearLayout>
                     </androidx.appcompat.widget.Toolbar>
@@ -118,7 +133,6 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView
-            android:paddingTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/statistic_button"
@@ -156,9 +170,9 @@
                             android:padding="10dp">
 
                             <ImageView
-                                android:layout_width="130dp"
-                                android:layout_height="130dp"
-                                app:srcCompat="@drawable/library_book"
+                                android:layout_width="130sp"
+                                android:layout_height="130sp"
+                                app:srcCompat="@drawable/ic_picture_pdf"
                                 android:layout_gravity="center_horizontal|center_vertical" />
 
                             <TextView
@@ -188,11 +202,9 @@
                             android:padding="10dp">
 
                             <ImageView
-                                android:layout_width="130dp"
-                                android:layout_height="130dp"
-                                app:srcCompat="@drawable/take_quiz"
-                                android:paddingBottom="5dp
-"
+                                android:layout_width="130sp"
+                                android:layout_height="130sp"
+                                app:srcCompat="@drawable/ic_baseline_file"
                                 android:layout_gravity="center_horizontal|center_vertical"
 
                                 />
@@ -212,7 +224,7 @@
                         android:id="@+id/myHistoryId"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:cardBackgroundColor="@color/cardview_light_background"
+                        app:cardBackgroundColor="@color/backgroundColor"
                         android:layout_margin="10dp"
                         app:cardElevation="10dp"
                         app:cardCornerRadius="10dp">
@@ -225,9 +237,9 @@
                             android:padding="10dp">
 
                             <ImageView
-                                android:layout_width="130dp"
-                                android:layout_height="130dp"
-                                app:srcCompat="@drawable/history_icon"
+                                android:layout_width="130sp"
+                                android:layout_height="130sp"
+                                app:srcCompat="@drawable/ic_history"
                                 android:layout_gravity="center_horizontal|center_vertical"
 
                                 />
@@ -258,13 +270,12 @@
                             android:layout_height="match_parent"
                             android:orientation="vertical"
                             android:layout_margin="2dp"
-                            android:padding="10dp"
-                            android:background="@color/cardview_light_background">
+                            android:padding="10dp">
 
                         <ImageView
-                            android:layout_width="130dp"
-                            android:layout_height="130dp"
-                            app:srcCompat="@drawable/result"
+                            android:layout_width="130sp"
+                            android:layout_height="130sp"
+                            app:srcCompat="@drawable/ic_post_add"
                             android:layout_gravity="center_horizontal|center_vertical" />
 
                         <TextView

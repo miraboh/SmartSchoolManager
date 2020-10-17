@@ -3,12 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.splashscreen.SplashScreenFragment">
+    tools:context=".ui.fragments.quiz.QuizFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="80dp"
-        android:scaleType="centerInside"
-        android:src="@mipmap/smart_school_icon" />
+        android:text="Hello" />
+
 </FrameLayout>
