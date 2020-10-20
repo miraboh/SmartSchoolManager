@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "538741883601-gtdd3uvhtf40g1v3kmnog0i5lnbo7qk1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobileedu02.smartschoolmanager",
+            "certificate_hash": "8e528dda3b91f288d93abd77a7859a2d8bfb51ac"
+          }
+        },
+        {
           "client_id": "538741883601-bovej48fndnjbj7ehu4reod8bv059q4n.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
