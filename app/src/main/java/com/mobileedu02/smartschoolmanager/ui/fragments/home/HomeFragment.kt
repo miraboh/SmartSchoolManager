@@ -1,10 +1,15 @@
 package com.mobileedu02.smartschoolmanager.ui.fragments.home
 
+import android.app.ProgressDialog
 import android.os.Bundle
+import android.os.Handler
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.mobileedu02.smartschoolmanager.R
 import com.mobileedu02.smartschoolmanager.databinding.HomeFragmentBinding
 import com.mobileedu02.smartschoolmanager.util.State
@@ -19,9 +24,11 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = HomeFragment()
-    }
+    private lateinit var firebaseAuth: FirebaseAuth
+    private var mDatabase: FirebaseDatabase? = null
+    private var mDatabaseReference: DatabaseReference? = null
+
+    private var mProgressBar: ProgressDialog? = null
 
     @Inject
     lateinit var viewModel: HomeViewModel
@@ -35,6 +42,12 @@ class HomeFragment : Fragment() {
 
         binding = HomeFragmentBinding.inflate(inflater)
 
+        mProgressBar = ProgressDialog(context)
+
+        mDatabase = FirebaseDatabase.getInstance()
+        mDatabaseReference = mDatabase!!.reference
+        firebaseAuth = FirebaseAuth.getInstance()
+
         binding.libraryId.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_libraryFragment)
         }
@@ -43,6 +56,24 @@ class HomeFragment : Fragment() {
 
         GlobalScope.launch(Dispatchers.Main) {
             loadNews()
+        }
+
+        binding.takeQuizId.setOnClickListener {
+            if (firebaseAuth.currentUser != null) {
+                mProgressBar!!.setMessage("Starting Quiz...")
+                mProgressBar!!.setCanceledOnTouchOutside(false)
+                mProgressBar!!.show()
+                binding.takeQuizId.isEnabled = false
+                Handler().postDelayed(Runnable {
+                    mProgressBar!!.hide()
+                    activity?.let {
+                        findNavController().navigate(R.id.action_homeFragment_to_quizFragment)
+                    }
+                },3000)
+            }else{
+                Toast.makeText(context,"You are not registered", Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_homeFragment_to_signUpFragment)
+            }
         }
 
         return binding.root

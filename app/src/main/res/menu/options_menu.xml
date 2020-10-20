@@ -6,5 +6,9 @@
         android:id="@+id/home"
         android:title="About Us"
         app:showAsAction="collapseActionView"/>
+    <item
+        android:id="@+id/signUpFragment"
+        android:title="Sign Up"
+        app:showAsAction="collapseActionView"/>
 
 </menu>

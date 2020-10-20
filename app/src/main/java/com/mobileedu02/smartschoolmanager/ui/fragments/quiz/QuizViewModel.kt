@@ -3,11 +3,32 @@ package com.mobileedu02.smartschoolmanager.ui.fragments.quiz
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.mobileedu02.smartschoolmanager.datatSource.remote.SmartSchRepository
+import com.mobileedu02.smartschoolmanager.model.Quiz
 import kotlinx.coroutines.*
 import java.io.IOException
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class QuizViewModel(private val smartSchRepository: SmartSchRepository) : ViewModel() {
+@Singleton
+class QuizViewModel @Inject constructor(private val smartSchRepository: SmartSchRepository) : ViewModel() {
     private val viewModelJob = SupervisorJob()
+
+    val questionslist: LiveData<List<Quiz>>? = smartSchRepository.downloadedQuiz
+
+    private val viewModelScope = CoroutineScope(viewModelJob + Dispatchers.IO)
+
+    init {
+        refreshDataFromRepository()
+    }
+
+    private fun refreshDataFromRepository() {
+        viewModelScope.launch {
+            try {
+                smartSchRepository.refreshQuiz()
+
+            } catch (networkError: IOException) { }
+        }
+    }
 
     override fun onCleared() {
         super.onCleared()

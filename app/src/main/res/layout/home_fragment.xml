@@ -14,7 +14,6 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/backgroundColor"
         tools:context=".ui.fragments.home.HomeFragment">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -172,7 +171,7 @@
                             <ImageView
                                 android:layout_width="130sp"
                                 android:layout_height="130sp"
-                                app:srcCompat="@drawable/ic_picture_pdf"
+                                app:srcCompat="@drawable/library_book"
                                 android:layout_gravity="center_horizontal|center_vertical" />
 
                             <TextView
@@ -204,7 +203,7 @@
                             <ImageView
                                 android:layout_width="130sp"
                                 android:layout_height="130sp"
-                                app:srcCompat="@drawable/ic_baseline_file"
+                                app:srcCompat="@drawable/take_quiz"
                                 android:layout_gravity="center_horizontal|center_vertical"
 
                                 />
@@ -224,7 +223,6 @@
                         android:id="@+id/myHistoryId"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:cardBackgroundColor="@color/backgroundColor"
                         android:layout_margin="10dp"
                         app:cardElevation="10dp"
                         app:cardCornerRadius="10dp">
@@ -239,7 +237,7 @@
                             <ImageView
                                 android:layout_width="130sp"
                                 android:layout_height="130sp"
-                                app:srcCompat="@drawable/ic_history"
+                                app:srcCompat="@drawable/history_icon"
                                 android:layout_gravity="center_horizontal|center_vertical"
 
                                 />
@@ -259,8 +257,6 @@
                         android:id="@+id/resultId"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:cardBackgroundColor="@color/backgroundColor"
-
                         android:layout_margin="10dp"
                         app:cardElevation="10dp"
                         app:cardCornerRadius="10dp">
@@ -275,7 +271,7 @@
                         <ImageView
                             android:layout_width="130sp"
                             android:layout_height="130sp"
-                            app:srcCompat="@drawable/ic_post_add"
+                            app:srcCompat="@drawable/result"
                             android:layout_gravity="center_horizontal|center_vertical" />
 
                         <TextView
