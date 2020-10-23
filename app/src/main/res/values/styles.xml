@@ -1,4 +1,5 @@
 <resources>
+
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -9,6 +10,7 @@
     <style name="AppTheme.Title.Expanded" parent="android:TextAppearance">
         <item name="android:textSize">48sp</item>
     </style>
+
     <style name="ProgressBarStyle">
         <item name="colorAccent">@color/lightTeal</item>
     </style>
@@ -20,6 +22,15 @@
     <style name="AppTheme.Title.Collapsed" parent="android:TextAppearance">
         <item name="android:textSize">20sp</item>
     </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>
