@@ -63,7 +63,7 @@ class QuizFragment : Fragment() {
 
     private var timeLeft: Long = 0
 
-    private var questionSize: Int = 40
+    private var questionSize: Int = 20
 
     private var qCounter: Int = -1
     private var currQuestion: Quiz? = null
@@ -104,19 +104,30 @@ class QuizFragment : Fragment() {
         colorStateList = r1!!.textColors
         binding.submitButton.visibility = View.GONE
         colorStateListCountDown = txtCounter!!.textColors
-        requireActivity().onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
+
+        timeLeft = COUNTDOWN_TIMER
+
+        // Once the take quiz fragment opens we want the timer to delay for the quiz to be fetched from the internet
+        Handler().postDelayed(Runnable {
+            startCountDown()
+        }, 3000)
+
+        requireActivity().onBackPressedDispatcher.addCallback(object :
+            OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                if (isEnabled) {
+                if (isEnabled){
                     val builder = AlertDialog.Builder(requireContext())
 
                     builder.setTitle("Warning!")
-                        .setMessage("Do you really want to terminate exam? ")
+                        .setMessage("Do you really want to terminate quiz? ")
                         .setPositiveButton("YES") { _, _ ->
                             countDownTimer!!.cancel()
                             subMitResult(mScore)
                             remove()
+                            isEnabled=false
+
                         }
-                        .setNegativeButton("No") { _, _ ->
+                        .setNegativeButton("No"){_,_->
 
                         }
                         .setCancelable(false)
@@ -125,29 +136,23 @@ class QuizFragment : Fragment() {
                 }
             }
         })
-        binding.setLifecycleOwner(this)
-
-        timeLeft = COUNTDOWN_TIMER
-        Handler().postDelayed(Runnable {
-            startCountDown()
-        }, 10000)
 
         quizviewModel.questionslist!!.observe(
             viewLifecycleOwner,
-            Observer<List<Quiz>> { newCourses ->
-                if (newCourses == null) {
+            Observer<List<Quiz>> { new ->
+                if (new == null) {
                     radioGroup!!.visibility = View.GONE
                     mSubmit!!.visibility = View.GONE
                     return@Observer
                 } else {
                     radioGroup!!.visibility = View.VISIBLE
                     mSubmit!!.visibility = View.VISIBLE
-                    showQuestion(newCourses)
+                    showQuestion(new)
                     mSubmit!!.setOnClickListener {
                         if (!ans) {
                             if (r1!!.isChecked || r2!!.isChecked || r3!!.isChecked || r4!!.isChecked) {
                                 check()
-                                showQuestion(newCourses)
+                                showQuestion(new)
                             } else {
                                 Toast.makeText(context, "Select Answer", Toast.LENGTH_SHORT).show()
                             }
@@ -163,8 +168,9 @@ class QuizFragment : Fragment() {
     private fun showQuestion(data: List<Quiz>) {
         radioGroup!!.clearCheck()
         qCounter++
-        //startCountDown()
+        // Try and simplify this logic
         qCountTotal = data.size + questionSize - data.size
+
         if (qCounter <= qCountTotal) {
             currQuestion = data.shuffled()[qCounter]
             binding.Question.text = currQuestion!!.question
@@ -187,7 +193,7 @@ class QuizFragment : Fragment() {
         val builder = AlertDialog.Builder(requireContext())
 
         builder.setTitle("Submitted Successfully")
-            .setMessage("Results coming soon")
+            .setMessage("Results will be published soon")
             .setPositiveButton("OK") { _, _ ->
                 requireView().findNavController().navigateUp()
             }
@@ -209,7 +215,6 @@ class QuizFragment : Fragment() {
             currentUserDb.child("score").push().setValue(score)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-
                         mProgressBar!!.hide()
                         activity?.let {
                             endGame()
@@ -274,7 +279,7 @@ class QuizFragment : Fragment() {
     }
 
     companion object {
-        private var COUNTDOWN_TIMER: Long = 1200000
+        private var COUNTDOWN_TIMER: Long = 720000
 
     }
 

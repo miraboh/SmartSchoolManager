@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.mobileedu02.smartschoolmanager.R
@@ -24,7 +25,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
 
-    private lateinit var firebaseAuth: FirebaseAuth
+    private var user: FirebaseUser? = null
     private var mDatabase: FirebaseDatabase? = null
     private var mDatabaseReference: DatabaseReference? = null
 
@@ -46,10 +47,14 @@ class HomeFragment : Fragment() {
 
         mDatabase = FirebaseDatabase.getInstance()
         mDatabaseReference = mDatabase!!.reference
-        firebaseAuth = FirebaseAuth.getInstance()
+        user = FirebaseAuth.getInstance().currentUser
 
         binding.libraryId.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_libraryFragment)
+        }
+
+        binding.resultId.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_resultsFragment)
         }
 
         binding.txtNewsFeed.isSelected=true
@@ -59,7 +64,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.takeQuizId.setOnClickListener {
-            if (firebaseAuth.currentUser != null) {
+            if (user != null) {
                 mProgressBar!!.setMessage("Starting Quiz...")
                 mProgressBar!!.setCanceledOnTouchOutside(false)
                 mProgressBar!!.show()
@@ -93,7 +98,7 @@ class HomeFragment : Fragment() {
                 }
 
                 is State.Failed ->{
-                    Toast.makeText(context,"News couldn't load",Toast.LENGTH_LONG).show()
+                    Toast.makeText(context,"Latest News couldn't load",Toast.LENGTH_LONG).show()
                 }
             }
         }

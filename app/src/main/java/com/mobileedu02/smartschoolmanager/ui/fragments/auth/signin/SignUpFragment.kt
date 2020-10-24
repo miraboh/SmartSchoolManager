@@ -88,7 +88,9 @@ class SignUpFragment : Fragment() {
 
             mAuth!!
 
-                .createUserWithEmailAndPassword(surName + "@gmail.com", otherNames.toString())
+                    //Once we get the users surname we are goig to use it to create a fake email address
+                    //The aim is so that we don't request emails from users
+                .createUserWithEmailAndPassword(surName + "xyz@gmail.com", otherNames.toString())
 
                 .addOnCompleteListener { task ->
                     mProgressBar!!.hide()

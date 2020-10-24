@@ -17,10 +17,15 @@
             app:destination="@id/libraryFragment" />
         <action
             android:id="@+id/action_homeFragment_to_quizFragment"
-            app:destination="@id/quizFragment" />
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_homeFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
     </fragment>
     <fragment
         android:id="@+id/libraryFragment"
@@ -48,4 +53,8 @@
         android:id="@+id/quizFragment"
         android:name="com.mobileedu02.smartschoolmanager.ui.fragments.quiz.QuizFragment"
         android:label="QuizFragment" />
+    <fragment
+        android:id="@+id/resultsFragment"
+        android:name="com.mobileedu02.smartschoolmanager.ResultsFragment"
+        android:label="ResultsFragment" />
 </navigation>
