@@ -1,21 +1,15 @@
-package com.mobileedu02.smartschoolmanager
+package com.mobileedu02.smartschoolmanager.ui.fragments.result
 
 import android.app.ProgressDialog
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.os.Message
-import android.text.method.TextKeyListener.clear
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.google.firebase.firestore.auth.User
 import com.mobileedu02.smartschoolmanager.databinding.FragmentResultsBinding
-import com.mobileedu02.smartschoolmanager.databinding.QuizFragmentBinding
 
 class ResultsFragment : Fragment() {
 
@@ -53,7 +47,7 @@ class ResultsFragment : Fragment() {
 
         //val user = FirebaseAuth.getInstance().currentUser
 
-        initSaladMenu()
+        //initSaladMenu()
 
         binding.txtResult.text = menu.toString()
 
@@ -70,12 +64,12 @@ class ResultsFragment : Fragment() {
     private fun initSaladMenu() {
         val menuListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                menu.clear()
+                //menu.clear()
                 //dataSnapshot.children.mapNotNullTo(menu) { it.getValue<User>(User::class.java) }
 
                 val s = dataSnapshot.getValue<User>(User::class.java)
                 mProgressBar!!.hide()
-                binding.txtResult.text = menu.toString()
+                binding.txtResult.text = s.toString()
 
             }
 
@@ -83,6 +77,6 @@ class ResultsFragment : Fragment() {
                 println("loadPost:onCancelled ${databaseError.toException()}")
             }
         }
-        mFirebaseDatabase!!.addListenerForSingleValueEvent(menuListener)
+        mFirebaseDatabase!!.child("Users").addListenerForSingleValueEvent(menuListener)
     }
 }

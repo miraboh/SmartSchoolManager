@@ -26,7 +26,10 @@
         <action
             android:id="@+id/action_homeFragment_to_aboutUs"
             app:destination="@id/aboutUs" />
+        <action
             android:id="@+id/action_homeFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
+        android:id="@+id/action_homeFragment_to_resultsFragment"
             app:destination="@id/resultsFragment" />
     </fragment>
     <fragment
@@ -62,6 +65,6 @@
         tools:layout="@layout/activity_about_us" />
     <fragment
         android:id="@+id/resultsFragment"
-        android:name="com.mobileedu02.smartschoolmanager.ResultsFragment"
+        android:name="com.mobileedu02.smartschoolmanager.ui.fragments.result.ResultsFragment"
         android:label="ResultsFragment" />
 </navigation>
