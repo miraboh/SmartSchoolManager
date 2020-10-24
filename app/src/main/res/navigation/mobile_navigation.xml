@@ -24,6 +24,8 @@
             android:id="@+id/action_homeFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
         <action
+            android:id="@+id/action_homeFragment_to_aboutUs"
+            app:destination="@id/aboutUs" />
             android:id="@+id/action_homeFragment_to_resultsFragment"
             app:destination="@id/resultsFragment" />
     </fragment>
@@ -53,6 +55,11 @@
         android:id="@+id/quizFragment"
         android:name="com.mobileedu02.smartschoolmanager.ui.fragments.quiz.QuizFragment"
         android:label="QuizFragment" />
+    <activity
+        android:id="@+id/aboutUs"
+        android:name="com.mobileedu02.smartschoolmanager.ui.activity.AboutUs"
+        android:label="activity_about_us"
+        tools:layout="@layout/activity_about_us" />
     <fragment
         android:id="@+id/resultsFragment"
         android:name="com.mobileedu02.smartschoolmanager.ResultsFragment"

@@ -1,5 +1,6 @@
 package com.mobileedu02.smartschoolmanager.ui.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.nav_host_fragment)
-        return NavigationUI.navigateUp(navController,drawerLayout)
+        return NavigationUI.navigateUp(navController, drawerLayout)
                 || super.onSupportNavigateUp()
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -47,8 +48,13 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle item selection
-        return NavigationUI.onNavDestinationSelected(item,findNavController(R.id.nav_host_fragment))
-                || super.onOptionsItemSelected(item)
+        return when (item.itemId) {
+            R.id.aboutUs -> {
+                val intent = Intent(this, AboutUs::class.java)
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
-
 }

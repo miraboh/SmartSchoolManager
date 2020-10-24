@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">Smart School Manager</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_about_us">AboutUs</string>
+    <string name="tab_text_1">About App</string>
+    <string name="tab_text_2">About Team</string>
+    <string name="app_description">Smart School Manager contains four major components which are:\n \n1. Library Section: Which contains list of books to study \n2. Take Quiz: Contains series of questions to test your knowledge \n3. My History: Contains all time history of various quizzes taken \n4. Results: Result of Current Quiz.</string>
+    <string name="app_summary">Welcome to Smart School Manager your preferred management software that allows you to digitally monitor your learning along with managing your progress and performance on a single platform.</string>
+    <string name="team_info">Developed by Team Mobile-Edu-02. \n\tGADS 2020 Community Project.</string>
+    <string name="copy_right">© 2020 Smart School. All rights reserved.</string>
+    <string name="about_us">About Us</string>
 </resources>
