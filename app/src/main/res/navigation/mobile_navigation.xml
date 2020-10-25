@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homeFragment">
+
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.mobileedu02.smartschoolmanager.ui.fragments.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_libraryFragment"
+            app:destination="@id/libraryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_homeFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_aboutUs"
+            app:destination="@id/aboutUs" />
+        <action
+            android:id="@+id/action_homeFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
+        android:id="@+id/action_homeFragment_to_resultsFragment"
+            app:destination="@id/resultsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.mobileedu02.smartschoolmanager.ui.fragments.library.LibraryFragment"
+        android:label="Library">
+        <action
+            android:id="@+id/action_libraryFragment_to_bookDetailsFragment"
+            app:destination="@id/bookDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookDetailsFragment"
+        android:name="com.mobileedu02.smartschoolmanager.ui.fragments.booksdetail.BookDetailsFragment"
+        android:label="Reading Section"
+        tools:layout="@layout/fragment_book_details">
+        <argument
+            android:name="bookArgs"
+            app:argType="com.mobileedu02.smartschoolmanager.model.Book"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.mobileedu02.smartschoolmanager.ui.fragments.auth.signin.SignUpFragment"
+        android:label="Registration" />
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.mobileedu02.smartschoolmanager.ui.fragments.quiz.QuizFragment"
+        android:label="QuizFragment" />
+    <activity
+        android:id="@+id/aboutUs"
+        android:name="com.mobileedu02.smartschoolmanager.ui.activity.AboutUs"
+        android:label="activity_about_us"
+        tools:layout="@layout/activity_about_us" />
+    <fragment
+        android:id="@+id/resultsFragment"
+        android:name="com.mobileedu02.smartschoolmanager.ui.fragments.result.ResultsFragment"
+        android:label="ResultsFragment" />
+</navigation>

@@ -1,0 +1,4 @@
+{
+  "chapIndex": "The Catalog of Design Patterns",
+  "text": "The catalog beginning on page 93 contains 23 design patterns. Their names and intents are listed next to give you an overview. The number in parentheses after each pattern name gives the page number for the pattern (a convention we follow throughout the book). Abstract Factory (99)Provide an interface for creating families of related or dependent objects without specifying their concrete classes. "
+}
