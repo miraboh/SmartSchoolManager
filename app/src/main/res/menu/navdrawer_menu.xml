@@ -9,6 +9,6 @@
     <item
         android:id="@+id/aboutUs"
         android:icon="@drawable/result_ic"
-        android:title="Home" />
+        android:title="About" />
 
 </menu>
