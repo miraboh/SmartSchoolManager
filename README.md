@@ -3,9 +3,11 @@ Gads 2020 project phase (work in progress...)
 
 <a href='https://developer.android.com/jetpack/guide' target='_blank'></a>
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/35488181/96335113-ebe40100-106d-11eb-8192-e78d985b585d.png" width="256" height="455">>
-<img src="https://user-images.githubusercontent.com/35488181/96335003-e2a66480-106c-11eb-8036-996e9d0176ce.png" width="256" height="455">>
-<img src="https://user-images.githubusercontent.com/35488181/96335002-df12dd80-106c-11eb-9a47-ec9563c9ce68.png" width="256" height="455">>
+  <img src="https://user-images.githubusercontent.com/35488181/96335113-ebe40100-106d-11eb-8192-e78d985b585d.png" width="155" height="300">>
+<img src="https://user-images.githubusercontent.com/35488181/96335003-e2a66480-106c-11eb-8036-996e9d0176ce.png" width="155" height="300">>
+<img src="https://user-images.githubusercontent.com/35488181/96335002-df12dd80-106c-11eb-9a47-ec9563c9ce68.png" width="155" height="300">>
+  <img src="https://user-images.githubusercontent.com/35488181/97099888-44c72100-168e-11eb-9121-5191586fac7b.png" width="155" height="300">>
+<img src="https://user-images.githubusercontent.com/35488181/97099886-4264c700-168e-11eb-8a4a-41d2b62c1e06.png" width="155" height="300">>
 
 </p>
 
