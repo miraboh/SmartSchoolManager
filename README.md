@@ -40,6 +40,11 @@ Gads 2020 project phase (work in progress...)
 </ol>
 </li>
 <li>
+<strong>Firebase Database: Realtime DB, Firebase Firestore, Firebase Auth</strong><br>
+<ol>
+</ol>
+</li>
+<li>
 <strong>Retrofit 2</strong><br>
 </li>
 <li>
