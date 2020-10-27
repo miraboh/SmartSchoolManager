@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.*
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -68,7 +69,7 @@ class HomeFragment : Fragment() {
                 mProgressBar!!.setMessage("Starting Quiz...")
                 mProgressBar!!.setCanceledOnTouchOutside(false)
                 mProgressBar!!.show()
-                binding.takeQuizId.isEnabled = false
+                //binding.takeQuizId.isEnabled = false
                 Handler().postDelayed(Runnable {
                     mProgressBar!!.hide()
                     activity?.let {

@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -35,6 +37,7 @@ class LibraryFragment : Fragment() {
 
         binding.setLifecycleOwner(this)
         binding.booksRecyclerView.adapter = adapter
+
 
         viewModel.downloadedBooks.observe(viewLifecycleOwner, Observer { newBooks ->
             if (newBooks == null){

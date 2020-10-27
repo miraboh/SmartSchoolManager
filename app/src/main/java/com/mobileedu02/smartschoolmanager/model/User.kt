@@ -8,6 +8,5 @@ data class Users(
     var surName: String? = "",
     var otherNames: String? = "",
     var phone: String? = "",
-    var score: List<Score>? = emptyList(),
-    var uuid: String? = ""
+    var score: Int? = 0
 )

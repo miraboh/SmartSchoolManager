@@ -35,11 +35,7 @@ class QuizFragment : Fragment() {
     @Inject
     lateinit var quizviewModel: QuizViewModel
 
-    private var mQuestionBank: QuizBank? = QuizBank(ArrayList())
-    private var mCurrentQuestion: Quiz? = null
-
     private var txtQuestion: TextView? = null
-    private var txtScore: TextView? = null
     private var txtQuestionCount: TextView? = null
     private var txtCounter: TextView? = null
     private var radioGroup: RadioGroup? = null
@@ -48,7 +44,6 @@ class QuizFragment : Fragment() {
     private var r3: RadioButton? = null
     private var r4: RadioButton? = null
     private var mSubmit: Button? = null
-    private var index = -1
     private var mScore: Int = 0
 
     private var mDatabaseReference: DatabaseReference? = null
@@ -59,7 +54,6 @@ class QuizFragment : Fragment() {
     private var colorStateListCountDown: ColorStateList? = null
     private var countDownTimer: CountDownTimer? = null
     private var mProgressBar: ProgressDialog? = null
-    private var quizQuestion: Quiz? = null
 
     private var timeLeft: Long = 0
 
@@ -73,8 +67,6 @@ class QuizFragment : Fragment() {
     private var ans: Boolean = false
     private lateinit var binding: QuizFragmentBinding
 
-    private var onBackPressedTime: Long = 0
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -82,6 +74,7 @@ class QuizFragment : Fragment() {
 
         binding = QuizFragmentBinding.inflate(inflater)
 
+        // Doesn't not doing any thing
         binding.setLifecycleOwner(this)
 
         mDatabase = FirebaseDatabase.getInstance()
@@ -112,30 +105,32 @@ class QuizFragment : Fragment() {
             startCountDown()
         }, 3000)
 
-        requireActivity().onBackPressedDispatcher.addCallback(object :
-            OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if (isEnabled){
-                    val builder = AlertDialog.Builder(requireContext())
-
-                    builder.setTitle("Warning!")
-                        .setMessage("Do you really want to terminate quiz? ")
-                        .setPositiveButton("YES") { _, _ ->
-                            countDownTimer!!.cancel()
-                            subMitResult(mScore)
-                            remove()
-                            isEnabled=false
-
-                        }
-                        .setNegativeButton("No"){_,_->
-
-                        }
-                        .setCancelable(false)
-                        .create()
-                        .show()
-                }
-            }
-        })
+        // We need to implement this on backPressed for warning when a user clicks the
+        // back button when the quiz is still on it wasn't working well that's why I commented it
+//        requireActivity().onBackPressedDispatcher.addCallback(object :
+//            OnBackPressedCallback(false) {
+//            override fun handleOnBackPressed() {
+//                if (isEnabled){
+//                    val builder = AlertDialog.Builder(requireContext())
+//
+//                    builder.setTitle("Warning!")
+//                        .setMessage("Do you really want to terminate quiz? ")
+//                        .setPositiveButton("YES") { _, _ ->
+//                            countDownTimer!!.cancel()
+//                            subMitResult(mScore)
+//                            // I don't really understand how this onbackpress work
+//                            // If you do please leave a comment for me
+//
+//                        }
+//                        .setNegativeButton("No"){_,_->
+//
+//                        }
+//                        .setCancelable(false)
+//                        .create()
+//                        .show()
+//                }
+//            }
+//        })
 
         quizviewModel.questionslist!!.observe(
             viewLifecycleOwner,
@@ -168,7 +163,7 @@ class QuizFragment : Fragment() {
     private fun showQuestion(data: List<Quiz>) {
         radioGroup!!.clearCheck()
         qCounter++
-        // Try and simplify this logic
+        // Try to simplify this logic
         qCountTotal = data.size + questionSize - data.size
 
         if (qCounter <= qCountTotal) {
@@ -212,7 +207,9 @@ class QuizFragment : Fragment() {
         val userId = mAuth!!.currentUser!!.uid
         if (user != null) {
             val currentUserDb = mDatabaseReference!!.child(userId)
-            currentUserDb.child("score").push().setValue(score)
+            // We want to have a single score of the user at any point
+            currentUserDb.child("score").removeValue()
+            currentUserDb.child("score").setValue(score)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         mProgressBar!!.hide()
@@ -279,6 +276,7 @@ class QuizFragment : Fragment() {
     }
 
     companion object {
+        // Roughly 12minutes
         private var COUNTDOWN_TIMER: Long = 720000
 
     }
