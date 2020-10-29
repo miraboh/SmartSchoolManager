@@ -29,6 +29,9 @@
         <action
             android:id="@+id/action_homeFragment_to_resultsFragment"
             app:destination="@id/resultsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
         android:id="@+id/action_homeFragment_to_resultsFragment"
             app:destination="@id/resultsFragment" />
     </fragment>
@@ -57,14 +60,33 @@
     <fragment
         android:id="@+id/quizFragment"
         android:name="com.mobileedu02.smartschoolmanager.ui.fragments.quiz.QuizFragment"
-        android:label="QuizFragment" />
+        android:label="Quiz" />
     <activity
         android:id="@+id/aboutUs"
         android:name="com.mobileedu02.smartschoolmanager.ui.activity.AboutUs"
-        android:label="activity_about_us"
+        android:label="About Us"
         tools:layout="@layout/activity_about_us" />
     <fragment
         android:id="@+id/resultsFragment"
         android:name="com.mobileedu02.smartschoolmanager.ui.fragments.result.ResultsFragment"
-        android:label="ResultsFragment" />
+        android:label="Results" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.mobileedu02.smartschoolmanager.ui.fragments.history.HistoryFragment"
+        android:label="My History" />
+    <fragment
+        android:id="@+id/aboutAppFragment"
+        android:name="com.mobileedu02.smartschoolmanager.ui.fragments.aboutus.AboutAppFragment"
+        android:label="About App"
+        tools:layout="@layout/fragment_about_app" />
+    <fragment
+        android:id="@+id/aboutTeamFragment"
+        android:name="com.mobileedu02.smartschoolmanager.ui.fragments.aboutus.AboutTeamFragment"
+        android:label="Developers"
+        tools:layout="@layout/fragment_about_team" />
+    <fragment
+        android:id="@+id/signOutFragment"
+        android:name="com.mobileedu02.smartschoolmanager.ui.fragments.auth.signout.SignOutFragment"
+        android:label="Registration"
+        tools:layout="@layout/sign_out_fragment" />
 </navigation>
