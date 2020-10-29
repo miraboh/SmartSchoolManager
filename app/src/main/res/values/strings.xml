@@ -8,4 +8,5 @@
     <string name="team_info">Developed by Team Mobile-Edu-02. \n\tGADS 2020 Community Project.</string>
     <string name="copy_right">© 2020 Smart School. All rights reserved.</string>
     <string name="about_us">About Us</string>
+    <string name="no_score_message">Hello, you are either yet to register or to take the test</string>
 </resources>

@@ -55,7 +55,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/surname_name_field"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:capitalize="words" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,7 +71,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/other_names_field"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:capitalize="words" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,7 +87,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phone_name_field"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

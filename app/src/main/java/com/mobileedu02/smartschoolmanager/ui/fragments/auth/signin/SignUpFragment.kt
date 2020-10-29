@@ -73,9 +73,9 @@ class SignUpFragment : Fragment() {
     }
 
     private fun createNewAccount() {
-        surName = etSurName?.text.toString()
-        otherNames = etOtherName?.text.toString()
-        phoneNo = etPhoneNo?.text.toString()
+        surName = etSurName?.text.toString().trim()
+        otherNames = etOtherName?.text.toString().trim()
+        phoneNo = etPhoneNo?.text.toString().trim()
 
 
         if (!TextUtils.isEmpty(surName) && !TextUtils.isEmpty(otherNames) && !TextUtils.isEmpty(phoneNo)
