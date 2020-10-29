@@ -69,7 +69,12 @@
     <fragment
         android:id="@+id/resultsFragment"
         android:name="com.mobileedu02.smartschoolmanager.ui.fragments.result.ResultsFragment"
-        android:label="Results" />
+        android:label="Results" >
+        <action
+            android:id="@+id/action_resultsFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.mobileedu02.smartschoolmanager.ui.fragments.history.HistoryFragment"

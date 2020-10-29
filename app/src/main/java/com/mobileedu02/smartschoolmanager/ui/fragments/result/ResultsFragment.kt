@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -49,6 +50,10 @@ class ResultsFragment : Fragment() {
 
         initUsers()
 
+        binding.shareButton.setOnClickListener {
+            Toast.makeText(context, "Will be available in subsequent releases", Toast.LENGTH_LONG).show()
+        }
+
         return binding.root
     }
     private fun initUsers() {
@@ -57,14 +62,14 @@ class ResultsFragment : Fragment() {
                 val user = dataSnapshot.getValue(Users::class.java)
                 mProgressBar!!.hide()
 
-                if (user == null) {
+                if (user!!.score == null) {
                     binding.txtResult.text = getString(R.string.no_score_message)
                 } else{
                     val userResultMessage = "Hello ${user.otherNames.toString()}, you scored ${user.score.toString()} out of 20"
                     binding.txtResult.text = userResultMessage
 
                     val userReward = when (user.score){
-                        in 15..20 -> "excellent performance"
+                        in 15..20 -> "Excellent performance"
                         in 8..14 -> "Good score but you can do better"
                         else -> "You performed quite poorly"
                     }
@@ -78,7 +83,7 @@ class ResultsFragment : Fragment() {
                     img_view_emoji.setImageResource(emoji)
 
                     if (user.score in 0..14 ) {try_again_btn.visibility = View.VISIBLE}
-                    try_again_btn.setOnClickListener { findNavController().navigate(R.id.quizFragment) }
+                    try_again_btn.setOnClickListener { findNavController().navigate(R.id.action_resultsFragment_to_quizFragment) }
                 }
 
             }

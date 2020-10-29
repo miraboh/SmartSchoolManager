@@ -89,9 +89,16 @@ class SignUpFragment : Fragment() {
 
             mAuth!!
 
-                    //Once we get the users surname we are goig to use it to create a fake email address
-                    //The aim is so that we don't request emails from users
-                .createUserWithEmailAndPassword(surName + "xyz@gmail.com", otherNames.toString())
+                /*
+                Once we get the users surname we are going to use it to create a fake email address
+                The aim is so that we don't request emails from users
+                Bellow i added xyz@gmail so that the system will validate it
+                Also xyz after othernames is for people will short char names like my team mate Ebo best team mate :)
+                The othername field is meant to accept the password and must be > 6 char letters
+                Spaghetti code right? :) (/\/\)
+                */
+
+                .createUserWithEmailAndPassword(surName + "xyz@gmail.com", otherNames + "xyz")
 
                 .addOnCompleteListener { task ->
                     mProgressBar!!.hide()
@@ -117,7 +124,7 @@ class SignUpFragment : Fragment() {
                             val builder = AlertDialog.Builder(requireContext())
 
                             builder.setTitle("Registration Failed!")
-                                .setMessage("Make Sure You Have An Active Internet Connection")
+                                .setMessage("Make sure you enter valid registration details")
                                 .setPositiveButton("OK") { _, _ ->
                                 }
                                 .setCancelable(false)
@@ -135,7 +142,7 @@ class SignUpFragment : Fragment() {
         val builder = AlertDialog.Builder(requireContext())
 
         builder.setTitle("Registration Successful!")
-            .setMessage("You can now take quizzes")
+            .setMessage("You can now take quiz")
             .setPositiveButton("OK") { _, _ ->
                 activity?.let {
                     requireView().findNavController().navigateUp()

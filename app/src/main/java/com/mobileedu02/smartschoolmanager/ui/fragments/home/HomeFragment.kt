@@ -50,12 +50,21 @@ class HomeFragment : Fragment() {
         mDatabaseReference = mDatabase!!.reference
         user = FirebaseAuth.getInstance().currentUser
 
+        binding.myHistoryId.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_historyFragment)
+        }
+
         binding.libraryId.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_libraryFragment)
         }
 
         binding.resultId.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_resultsFragment)
+            if (user != null) {
+                findNavController().navigate(R.id.action_homeFragment_to_resultsFragment)
+            }else{
+                Toast.makeText(context,"You are not registered", Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_homeFragment_to_signUpFragment)
+            }
         }
 
         binding.txtNewsFeed.isSelected=true

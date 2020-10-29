@@ -2,7 +2,6 @@ package com.mobileedu02.smartschoolmanager.ui.fragments.quiz
 
 import android.app.ProgressDialog
 import android.content.ContentValues.TAG
-import android.content.SharedPreferences
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
@@ -13,7 +12,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -24,7 +22,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.mobileedu02.smartschoolmanager.databinding.QuizFragmentBinding
 import com.mobileedu02.smartschoolmanager.model.Quiz
-import com.mobileedu02.smartschoolmanager.model.QuizBank
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 import javax.inject.Inject
@@ -188,7 +185,7 @@ class QuizFragment : Fragment() {
         val builder = AlertDialog.Builder(requireContext())
 
         builder.setTitle("Submitted Successfully")
-            .setMessage("Results will be published soon")
+            .setMessage("Quiz Score Now Available In The Result Section")
             .setPositiveButton("OK") { _, _ ->
                 requireView().findNavController().navigateUp()
             }
