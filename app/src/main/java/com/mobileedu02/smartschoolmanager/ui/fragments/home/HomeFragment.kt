@@ -68,6 +68,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.txtNewsFeed.isSelected=true
+        //binding.txtNewsFeed.scrollBarFadeDuration = 1
 
         GlobalScope.launch(Dispatchers.Main) {
             loadNews()

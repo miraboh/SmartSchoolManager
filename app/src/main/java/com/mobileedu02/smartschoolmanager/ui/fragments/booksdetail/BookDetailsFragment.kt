@@ -5,10 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.activity.OnBackPressedCallback
 import com.mobileedu02.smartschoolmanager.R
 import com.mobileedu02.smartschoolmanager.databinding.FragmentBookDetailsBinding
@@ -53,6 +50,12 @@ class BookDetailsFragment : Fragment() {
                 url = parent!!.getItemAtPosition(position) as String
                 display(generateBooksByChap())
             }
+        }
+        binding.videoID.setOnClickListener {
+            Toast.makeText(context, "Coming Soon", Toast.LENGTH_LONG).show()
+        }
+        binding.audioID.setOnClickListener {
+            Toast.makeText(context, "Coming Soon", Toast.LENGTH_LONG).show()
         }
 
         return binding.root
