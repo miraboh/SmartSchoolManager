@@ -65,6 +65,7 @@ Smart School Manager is written using Kotlin, and leverages tools like
 </p>
 
 # Setup
+<ul>
 Start out by cloning this repo.
 
 # Firebase
@@ -89,5 +90,6 @@ Start out by cloning this repo.
 <li>
 <strong>Run the application.</strong>
 </li>
+</ul>
 </ul>
 <br>
