@@ -69,9 +69,9 @@ Start out by cloning this repo.
 
 # Firebase
 <ul>
-<li><strong>Default app name is com.example.tassist. Choose your app's name and replace the default name in the necessary files. </strong></li>
+<li><strong>Default app name is com.mobileedu02.smartschoolmanager Choose your app's name and replace the default name in the necessary files. </strong></li>
 <li>
-<strong>Set up a Firebase project, generate a configuration file and copy the file to this repo by following Steps 1as stated <a href="https://firebase.google.com/docs/android/setup"> here.</a></strong><br>
+<strong>Set up a Firebase project, generate and add the configuration file to the project. You can check how to do it<a href="https://firebase.google.com/docs/android/setup"> here.</a></strong><br>
 </li>
 <li>
 <strong>Enable Email/Password authentication method in the Firebase console. You can find it under Develop>Authentication>Sign-in method.</strong><br>
