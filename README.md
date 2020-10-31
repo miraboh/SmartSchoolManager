@@ -48,7 +48,7 @@ Smart School Manager is written using Kotlin, and leverages tools like
 
 # Demo
 <ul>
-<strong>Check out the video link <a href="https://gads-20-20.slack.com/files/U015J6K7AR0/F01DPRB4EQ3/2020_10_30_14_02_23_58.mp4"> Here</a> by going to Develop>Database.</strong><br>
+<strong>Check out the video link <a href="https://gads-20-20.slack.com/files/U015J6K7AR0/F01DPRB4EQ3/2020_10_30_14_02_23_58.mp4"> Here</a>
 </ul>
 # Features
 <ul>
