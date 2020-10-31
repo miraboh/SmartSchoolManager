@@ -62,12 +62,10 @@ Smart School Manager is written using Kotlin, and leverages tools like
 <img src="https://user-images.githubusercontent.com/35488181/96335002-df12dd80-106c-11eb-9a47-ec9563c9ce68.png" width="155" height="300">>
   <img src="https://user-images.githubusercontent.com/35488181/97099888-44c72100-168e-11eb-9121-5191586fac7b.png" width="155" height="300">>
 <img src="https://user-images.githubusercontent.com/35488181/97099886-4264c700-168e-11eb-8a4a-41d2b62c1e06.png" width="155" height="300">>
-
 </p>
+
 # Setup
-Start out by cloning this repo.<h1><a href="gh repo clone miraboh/SmartSchoolManager">cloning this repo</a></h1>
-<h2><strong>Tools</strong></h2>
-<br>
+Start out by cloning this repo.
 
 # Firebase
 <ul>
