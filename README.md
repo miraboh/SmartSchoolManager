@@ -79,8 +79,10 @@ Start out by cloning this repo.
 <li>
 <strong>Enable <a href="https://firebase.google.com/docs/firestore"> Cloud Firestore</a> by going to Develop>Database.</strong><br>
 </li>
+  </ul>
   
 # Local
+<ul>
 <li>
 <strong>Make sure that a physical device or emulator is connected to your system.</strong>
 </li>
