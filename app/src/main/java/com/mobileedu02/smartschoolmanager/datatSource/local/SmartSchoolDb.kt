@@ -35,7 +35,7 @@ abstract class SmartSchoolDb : RoomDatabase() {
 ////            }
 ////        }
 ////    }
-//
+
     companion object{
         val DATABASE_NAME: String = "history_db"
     }
