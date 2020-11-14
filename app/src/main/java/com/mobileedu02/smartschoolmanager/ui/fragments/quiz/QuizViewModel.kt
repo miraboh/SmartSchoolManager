@@ -3,6 +3,7 @@ package com.mobileedu02.smartschoolmanager.ui.fragments.quiz
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.mobileedu02.smartschoolmanager.datatSource.remote.SmartSchRepository
+import com.mobileedu02.smartschoolmanager.model.History
 import com.mobileedu02.smartschoolmanager.model.Quiz
 import kotlinx.coroutines.*
 import java.io.IOException
@@ -10,10 +11,14 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class QuizViewModel @Inject constructor(private val smartSchRepository: SmartSchRepository) : ViewModel() {
+class QuizViewModel @Inject constructor(
+    private val smartSchRepository: SmartSchRepository
+    ) : ViewModel() {
     private val viewModelJob = SupervisorJob()
 
     val questionslist: LiveData<List<Quiz>>? = smartSchRepository.downloadedQuiz
+
+
 
     private val viewModelScope = CoroutineScope(viewModelJob + Dispatchers.IO)
 
@@ -26,12 +31,21 @@ class QuizViewModel @Inject constructor(private val smartSchRepository: SmartSch
             try {
                 smartSchRepository.refreshQuiz()
 
-            } catch (networkError: IOException) { }
+            } catch (networkError: IOException) {
+            }
         }
     }
 
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()
+    }
+
+    fun insert(history: History) {
+
+        viewModelScope.launch {
+
+            smartSchRepository.insertHistory(history)
+        }
     }
 }

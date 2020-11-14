@@ -16,24 +16,38 @@ xmlns:tools="http://schemas.android.com/tools">
         android:layout_gravity="center">
 
         <ImageView
+            android:id="@+id/imageView3"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:background="@drawable/history"
-            app:layout_constraintBottom_toTopOf="@+id/textView4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No Record!"
-            android:textColor="@color/colorPrimary"
-            android:textSize="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView3"
+            app:layout_constraintVertical_bias="0.100000024">
+
+            <TextView
+                android:id="@+id/txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Record!"
+                android:textColor="@color/colorPrimary"
+                android:textSize="21sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.core.widget.NestedScrollView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

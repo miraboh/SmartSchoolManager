@@ -13,28 +13,28 @@ abstract class SmartSchoolDb : RoomDatabase() {
     /**
      * without hilt/dagger our roomdb should have looked like this
      */
-//    companion object {
-//
-//        @Volatile
-//        private var INSTANCE: SmartSchoolDb? = null
-//
-//        fun getInstance(context: Context): SmartSchoolDb {
-//            synchronized(this) {
-//                var instance = INSTANCE
-//                if (instance == null) {
-//                    instance = Room.databaseBuilder(
-//                        context.applicationContext,
-//                        SmartSchoolDb::class.java,
-//                        "history_db"
-//                    )
-//                        .fallbackToDestructiveMigration()
-//                        .build()
-//                    INSTANCE = instance
-//                }
-//                return instance
-//            }
-//        }
-//    }
+////    companion object {
+////
+////        @Volatile
+////        private var INSTANCE: SmartSchoolDb? = null
+////
+////        fun getInstance(context: Context): SmartSchoolDb {
+////            synchronized(this) {
+////                var instance = INSTANCE
+////                if (instance == null) {
+////                    instance = Room.databaseBuilder(
+////                        context.applicationContext,
+////                        SmartSchoolDb::class.java,
+////                        "history_db"
+////                    )
+////                        .fallbackToDestructiveMigration()
+////                        .build()
+////                    INSTANCE = instance
+////                }
+////                return instance
+////            }
+////        }
+////    }
 
     companion object{
         val DATABASE_NAME: String = "history_db"

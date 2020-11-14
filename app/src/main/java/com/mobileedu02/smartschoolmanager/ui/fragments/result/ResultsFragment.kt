@@ -1,7 +1,6 @@
 package com.mobileedu02.smartschoolmanager.ui.fragments.result
 
 import android.app.ProgressDialog
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,10 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.mobileedu02.smartschoolmanager.R
 import com.mobileedu02.smartschoolmanager.databinding.FragmentResultsBinding
-import com.mobileedu02.smartschoolmanager.model.Users
-import com.mobileedu02.smartschoolmanager.ui.activity.AboutUs
-import com.mobileedu02.smartschoolmanager.ui.fragments.quiz.QuizFragment
-import kotlinx.android.synthetic.main.activity_main.*
+import com.mobileedu02.smartschoolmanager.model.User
 import kotlinx.android.synthetic.main.fragment_results.*
 
 class ResultsFragment : Fragment() {
@@ -59,7 +55,7 @@ class ResultsFragment : Fragment() {
     private fun initUsers() {
         val userListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val user = dataSnapshot.getValue(Users::class.java)
+                val user = dataSnapshot.getValue(User::class.java)
                 mProgressBar!!.hide()
 
                 if (user!!.score == null) {
