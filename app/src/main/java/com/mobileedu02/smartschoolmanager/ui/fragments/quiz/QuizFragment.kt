@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
+import android.os.SystemClock
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -15,12 +16,15 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.mobileedu02.smartschoolmanager.databinding.QuizFragmentBinding
+import com.mobileedu02.smartschoolmanager.model.History
 import com.mobileedu02.smartschoolmanager.model.Quiz
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
@@ -177,6 +181,8 @@ class QuizFragment : Fragment() {
             mSubmit!!.text = "Submit"
             mSubmit!!.setOnClickListener {
                 subMitResult(score)
+                val timeDate = System.currentTimeMillis()
+                quizviewModel.insert(History(0, timeDate, score))
             }
         }
     }
@@ -187,7 +193,7 @@ class QuizFragment : Fragment() {
         builder.setTitle("Submitted Successfully")
             .setMessage("Quiz Score Now Available In The Result Section")
             .setPositiveButton("OK") { _, _ ->
-                requireView().findNavController().navigateUp()
+                findNavController().navigateUp()
             }
             .setCancelable(false)
             .create()
@@ -204,9 +210,17 @@ class QuizFragment : Fragment() {
         val userId = mAuth!!.currentUser!!.uid
         if (user != null) {
             val currentUserDb = mDatabaseReference!!.child(userId)
-            // We want to have a single score of the user at any point
+
+            /**
+             We want to have a single score of the user at any point
+             we can decide as well to store all users score, I think there is a firebase function for that, I guess 'push'
+             */
+
+            //val timeDate = System.currentTimeMillis()
+            //quizviewModel.insert(History(timeDate, score))
             currentUserDb.child("score").removeValue()
             currentUserDb.child("score").setValue(score)
+
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
                         mProgressBar!!.hide()

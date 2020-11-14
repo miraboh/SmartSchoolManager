@@ -3,6 +3,8 @@ package com.mobileedu02.smartschoolmanager.datatSource.remote
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.firestore.FirebaseFirestore
+import com.mobileedu02.smartschoolmanager.datatSource.local.SmartSchoolDao
+import com.mobileedu02.smartschoolmanager.model.History
 import com.mobileedu02.smartschoolmanager.model.News
 import com.mobileedu02.smartschoolmanager.model.Quiz
 import com.mobileedu02.smartschoolmanager.util.State
@@ -17,7 +19,9 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class SmartSchRepository @Inject constructor(private val apiService: ApiService){
+class SmartSchRepository @Inject constructor(
+    private val smartSchoolDao: SmartSchoolDao,
+    private val apiService: ApiService){
 
     private val mInstance = FirebaseFirestore.getInstance()
     private val getting = mInstance.collection("feeds").document("feedsId")
@@ -48,6 +52,11 @@ class SmartSchRepository @Inject constructor(private val apiService: ApiService)
         withContext(Dispatchers.IO) {
             val quiz = apiService.getApiQuiz()
             _downloadedQuiz.postValue(quiz)
+        }
+    }
+    suspend fun insertHistory(history: History) {
+        withContext(Dispatchers.IO) {
+            smartSchoolDao.insert(history)
         }
     }
 

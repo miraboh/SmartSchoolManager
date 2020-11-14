@@ -9,11 +9,8 @@ data class History(
     @PrimaryKey(autoGenerate = true)
     var quizId: Long = 0L,
 
-    @ColumnInfo(name = "quiz_time")
+    @ColumnInfo(name = "quiz_time_date")
     val quizTime: Long = System.currentTimeMillis(),
-
-    @ColumnInfo(name = "quiz_date")
-    var quizDate: Long = System.currentTimeMillis(),
 
     @ColumnInfo(name = "score")
     var score: Int = 0
