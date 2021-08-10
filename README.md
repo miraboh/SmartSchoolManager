@@ -1,9 +1,8 @@
 # Smart School Manager 
-Welcome to Smart School Manager your preferred management software that allows you to digitally learn, monitoring and managing your progress and performance with your mobile device.
+Welcome to Smart School Manager your preferred management software that allows you to digitally learn, monitor and manage your progress and performance with your mobile device.
 
-The project was developed for Android. Please feel free to contribute and open PRs for support.
 
-Note: Because of limited time and to meet up with the Gads community project deadline, The codebase was developed in fast iterations with little user's research. It can be improved and made better, To do this, consider opening an issue or PR.
+Note: Because of limited time to meet up with the Gads community project deadline, The codebase was developed in fast iterations with little user's research. It can be improved and made better, To do this, consider opening an issue or PR.
 
 We welcome contributions from everyone, especially Gads 20XX Learners.
 
